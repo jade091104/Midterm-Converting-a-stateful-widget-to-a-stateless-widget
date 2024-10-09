@@ -1,1 +1,38 @@
-https://zapp.run/edit/flutter-z04y062i04z0?entry=lib/main.dart&file=lib/main.dart
+import 'package:flutter/material.dart';
+
+class Counter extends StatelessWidget {
+
+  const Counter({super.key});
+
+
+void callBack (){ //declaire yung callBack then sulat kung ano gusto ko ilagay na out put once na ma pindot ang button
+  print ('The button was pressed');
+}
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,// center yunh button
+      children: <Widget>[
+        ElevatedButton(
+          onPressed: callBack, // pag na press yung button mag cacallback sya tapos ilalabas nya yung out put na "The button was pressed"
+          child: const Text('button'),//pangalan ng button na lalabas sa screen para sa user 
+        ),
+      ],
+    );
+  }
+}
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
+}
+
